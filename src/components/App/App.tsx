@@ -1,10 +1,11 @@
 import { SignupCta } from "../SignupCta";
 
 import { useAnalytics } from "use-analytics";
+import { useFeatureIsOn } from "@growthbook/growthbook-react";
 
 const App = () => {
   const { track, page } = useAnalytics();
-
+  const sticky = useFeatureIsOn("test-feature");
   // page view
   page();
 

@@ -88,6 +88,18 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@growthbook/growthbook-react@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@growthbook/growthbook-react/-/growthbook-react-0.11.1.tgz#8d073777df3513c16ec6e33dadca6c8138f499b3"
+  integrity sha512-xVFf5BxgiJkocKHZXE2QfFXX6p+ZFxRGTrDGVWjnD8TwuBgNdqrcIGF0n/bnH3XQ9bSbWEgh7WjI2UqxuTZXaQ==
+  dependencies:
+    "@growthbook/growthbook" "^0.21.1"
+
+"@growthbook/growthbook@^0.21.1":
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/@growthbook/growthbook/-/growthbook-0.21.1.tgz#d44d746f0b3da0f85ae44d3d0156909593f2f601"
+  integrity sha512-R5A2hnnEdSFCs7YyBGg4MujlwFiFZ43I4OIIjGYCGB+Y/m+9dl6DAR7c3uvtGRgiGqR51KtWrecJKq2mIP25Jg==
+
 "@headlessui/react@^1.7.7":
   version "1.7.7"
   resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.7.tgz#d6f8708d8943ae8ebb1a6929108234e4515ac7e8"
