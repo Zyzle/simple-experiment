@@ -1,6 +1,13 @@
 import { SignupCta } from "../SignupCta";
 
+import { useAnalytics } from "use-analytics";
+
 const App = () => {
+  const { track, page } = useAnalytics();
+
+  // page view
+  page();
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-cyan-300 to-blue-600">
       <header className="w-full backdrop-blur py-4 px-10 fixed">
@@ -10,13 +17,28 @@ const App = () => {
         <nav className="col-span-3">
           <ul>
             <li>
-              <a href="#s1">Section 1</a>
+              <a
+                href="#s1"
+                onClick={() => track("click", { type: "nav", to: "s1" })}
+              >
+                Section 1
+              </a>
             </li>
             <li>
-              <a href="#s2">Section 2</a>
+              <a
+                href="#s2"
+                onClick={() => track("click", { type: "nav", to: "s2" })}
+              >
+                Section 2
+              </a>
             </li>
             <li>
-              <a href="#s3">Section 3</a>
+              <a
+                href="#s3"
+                onClick={() => track("click", { type: "nav", to: "s3" })}
+              >
+                Section 3
+              </a>
             </li>
           </ul>
         </nav>
