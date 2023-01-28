@@ -1,7 +1,11 @@
+import { useFeatureIsOn } from "@growthbook/growthbook-react";
+import { useAnalytics } from "use-analytics";
+
 import { SignupCta } from "../SignupCta";
 
-import { useAnalytics } from "use-analytics";
-import { useFeatureIsOn } from "@growthbook/growthbook-react";
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const App = () => {
   const { track, page } = useAnalytics();
@@ -10,11 +14,11 @@ const App = () => {
   page();
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-cyan-300 to-blue-600">
-      <header className="w-full backdrop-blur py-4 px-10 fixed">
+    <main className="h-screen flex flex-col bg-gradient-to-b from-cyan-300 to-blue-600">
+      <header className="w-full py-4 px-10 shadow-md bg-white z-10">
         <h1 className="prose prose-xl">An Awesome site</h1>
       </header>
-      <div className="grid grid-cols-12 gap-6 p-8 pt-20">
+      <div className="grid grid-cols-12 gap-6 p-8 flex-1 overflow-y-auto">
         <nav className="col-span-3">
           <ul>
             <li>
@@ -161,7 +165,9 @@ const App = () => {
             vehicula libero.
           </p>
         </article>
-        <aside className="col-span-3">
+        <aside
+          className={classNames("col-span-3", sticky ? "fixed right-8" : "")}
+        >
           <SignupCta />
         </aside>
       </div>
