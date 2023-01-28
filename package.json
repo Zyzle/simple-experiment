@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@analytics/mixpanel": "^0.4.0",
+    "@growthbook/growthbook-react": "^0.11.1",
     "@headlessui/react": "^1.7.7",
     "analytics": "^0.8.1",
     "react": "^18.2.0",
