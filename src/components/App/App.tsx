@@ -9,7 +9,7 @@ function classNames(...classes) {
 
 const App = () => {
   const { track, page } = useAnalytics();
-  const sticky = useFeatureIsOn("test-feature");
+  const sticky = useFeatureIsOn("sticky-subscribe-cta");
   // page view
   page();
 
@@ -26,7 +26,7 @@ const App = () => {
                 href="#s1"
                 onClick={() => track("click", { type: "nav", to: "s1" })}
               >
-                Section 1
+                Notion
               </a>
             </li>
             <li>
@@ -34,7 +34,7 @@ const App = () => {
                 href="#s2"
                 onClick={() => track("click", { type: "nav", to: "s2" })}
               >
-                Section 2
+                Chat GPT 3.5
               </a>
             </li>
             <li>
@@ -42,127 +42,204 @@ const App = () => {
                 href="#s3"
                 onClick={() => track("click", { type: "nav", to: "s3" })}
               >
-                Section 3
+                Bard
               </a>
             </li>
           </ul>
         </nav>
         <article className="col-span-6 bg-white shadow-xl shadow-slate-700/10 rounded-lg p-6 prose">
-          <h2 id="s1">Section 1</h2>
           <p className="mb-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            iaculis, neque nec molestie tincidunt, leo nibh consectetur lacus,
-            eget venenatis leo eros at odio. Curabitur eros ipsum, ullamcorper a
-            leo vel, maximus iaculis erat. Fusce rutrum urna in volutpat
-            dapibus. Nulla iaculis suscipit dolor, sit amet faucibus tellus
-            tristique eu. In sem elit, sollicitudin eu magna vel, elementum
-            molestie neque. Pellentesque sed consequat dui, sed auctor ante.
-            Cras suscipit sit amet massa in finibus. Ut et cursus neque. Vivamus
-            maximus neque nunc, in faucibus velit tempus in. Vestibulum cursus
-            et diam vel egestas.
+            I needed some content here for the page so I asked 3 different AI's
+            to write some for me. All three were given the same prompt; "write a
+            summary of feature flags in software development", Notion only gave
+            a single paragraph (although I had the option to ask for more)
+            ChatGPT and Google Bard really went for it though
+          </p>
+          <h2 id="s1">Notion</h2>
+          <p className="mb-2">
+            Feature flagging is a best practice in software development that
+            allows developers to control the activation or deactivation of
+            specific features within an application or system. It enables teams
+            to manage feature releases, perform A/B testing, and make
+            data-driven decisions without deploying new code or impacting the
+            infrastructure. Feature flag tools, such as LaunchDarkly,
+            Rollout.io, and ConfigCat, provide platforms and SDKs that simplify
+            the process of creating, managing, and monitoring feature flags.
+            These tools offer intuitive dashboards, real-time analytics, and
+            support for multiple programming languages, making it easier for
+            developers to integrate feature flagging into their applications. By
+            using feature flagging, teams can effectively control feature
+            rollout, mitigate risks, and deliver a personalized and optimized
+            user experience.
+          </p>
+
+          <h2 id="s2">Chat GPT 3.5</h2>
+          <p className="mb-2">
+            Feature flags, also known as feature toggles or feature switches,
+            are a crucial technique in software development that enables teams
+            to manage and control the release of new features or changes to
+            their software applications. They offer a flexible way to introduce,
+            test, and deploy new functionality while minimizing risks and
+            ensuring a smoother development and release process. Here is a
+            summary of feature flags in software development:
+          </p>
+          <ol>
+            <li>
+              <b>Introduction of Controlled Variability:</b> Feature flags allow
+              developers to introduce variability in their codebase by
+              incorporating conditional statements that determine whether a
+              specific feature is active or inactive. This means that code for a
+              feature can exist in the production environment but remain hidden
+              or inactive until it's ready for release.
+            </li>
+
+            <li>
+              <b>Gradual Rollouts:</b> With feature flags, teams can roll out
+              new features gradually to a subset of users or a specific
+              audience. This enables incremental testing, gathers feedback, and
+              identifies potential issues or performance bottlenecks early in
+              the development process.
+            </li>
+
+            <li>
+              <b>A/B Testing and Experimentation:</b> Feature flags are
+              instrumental in A/B testing, enabling developers to compare the
+              performance and user satisfaction of different versions of a
+              feature. By toggling flags for different user groups, teams can
+              make data-driven decisions about which version is more effective.
+            </li>
+
+            <li>
+              <b>Emergency Kill Switches:</b> In case a newly released feature
+              causes unexpected problems or negatively impacts the application's
+              stability, a feature flag can be used as an emergency kill switch
+              to instantly deactivate the feature without requiring a new
+              deployment.
+            </li>
+
+            <li>
+              <b>
+                Enabling Continuous Integration/Continuous Deployment (CI/CD):
+              </b>
+              Feature flags integrate seamlessly with CI/CD pipelines, allowing
+              developers to push code changes to production without necessarily
+              enabling new features immediately. This promotes a more frequent
+              and automated release process.
+            </li>
+
+            <li>
+              <b>Feature Rollbacks:</b> If a feature encounters critical issues
+              post-release, feature flags simplify the process of rolling back
+              to a stable version of the software by merely turning off the
+              flag, reverting to the previous state.
+            </li>
+
+            <li>
+              <b>User-Specific Customization:</b> Feature flags can be employed
+              to customize the user experience based on individual preferences
+              or user-specific settings, enhancing personalization within the
+              application.
+            </li>
+
+            <li>
+              <b>Reduced Risk and Increased Flexibility:</b> Feature flags
+              reduce the risk associated with large-scale releases by
+              compartmentalizing features and making it easier to manage their
+              activation or deactivation. This flexibility also facilitates
+              hotfixes and rapid response to user feedback.
+            </li>
+
+            <li>
+              <b>Enhanced Collaboration:</b> Development teams can collaborate
+              more effectively with product managers, designers, and QA teams by
+              using feature flags to align on the state and behavior of a
+              feature throughout its development lifecycle.
+            </li>
+
+            <li>
+              <b>Versioning and Maintenance:</b> Feature flags can assist in
+              versioning and maintaining multiple iterations of a feature,
+              ensuring that code remains manageable and that older versions can
+              be phased out gracefully.
+            </li>
+          </ol>
+
+          <h2 id="s3">Bard</h2>
+          <p className="mb-2">
+            Feature flags, also known as feature toggles or feature switches,
+            are a software development technique that allows developers to
+            enable or disable features without deploying new code. This is done
+            by adding a conditional statement to the code that checks the value
+            of the feature flag. If the flag is enabled, the code is executed;
+            if the flag is disabled, the code is skipped.
           </p>
           <p className="mb-2">
-            Praesent pellentesque eros quis bibendum laoreet. Duis metus nibh,
-            finibus dignissim imperdiet vel, scelerisque sit amet elit. Praesent
-            sed convallis orci. Sed interdum erat non tempus faucibus. Nullam
-            eget turpis sollicitudin, bibendum quam nec, scelerisque tortor.
-            Morbi suscipit massa odio, non sagittis tellus suscipit non. In hac
-            habitasse platea dictumst. Curabitur dapibus eleifend faucibus. Nunc
-            et ligula elementum, suscipit purus at, sollicitudin ligula. Sed
-            eget enim diam. Donec pretium vitae metus quis feugiat.
+            Feature flags have a number of benefits for software development,
+            including:
           </p>
+          <ul>
+            <li>
+              Risk reduction: Feature flags allow developers to release new
+              features gradually, reducing the risk of catastrophic failures.
+            </li>
+            <li>
+              Experimentation and A/B testing: Feature flags can be used to run
+              experiments and A/B tests by exposing a feature to a subset of
+              users and comparing its performance against the existing solution.
+            </li>
+            <li>
+              Continuous integration/continuous delivery (CI/CD): Feature flags
+              facilitate CI/CD by decoupling feature development from
+              deployment, enabling smaller and more frequent releases.
+            </li>
+            <li>
+              Operational flexibility: Feature flags can be enabled or disabled
+              on-the-fly, making it easier to respond to unforeseen issues or
+              changing user requirements without a full redeployment.
+            </li>
+            <li>
+              Customization: Feature flags can be used to customize the user
+              experience based on user segments or configuration settings.
+            </li>
+          </ul>
           <p className="mb-2">
-            Vestibulum eu nisl eu orci auctor pellentesque. Donec pulvinar metus
-            vel feugiat pellentesque. Nam accumsan quis justo eget luctus. Duis
-            suscipit porta nulla non commodo. Curabitur purus leo, hendrerit at
-            ullamcorper vel, iaculis sit amet dui. Quisque bibendum, dolor sit
-            amet imperdiet pharetra, sem elit gravida ipsum, et sollicitudin
-            nulla mi ac risus. Aenean condimentum varius nibh vitae congue.
-            Mauris ut consectetur quam. Suspendisse bibendum suscipit ipsum eget
-            faucibus.
+            Feature flags can be used for a variety of purposes, including:
           </p>
+          <ul>
+            <li>
+              Rolling out new features gradually: Feature flags can be used to
+              release new features to a small subset of users at first, and then
+              gradually roll them out to more users over time. This allows
+              developers to monitor the performance of the new features and fix
+              any bugs before they are released to all users.
+            </li>
+            <li>
+              Running A/B tests: Feature flags can be used to run A/B tests by
+              showing different versions of a feature to different groups of
+              users. This allows developers to compare the performance of
+              different versions of the feature and identify which one works
+              best.
+            </li>
+            <li>
+              Enabling or disabling features on-the-fly: Feature flags can be
+              enabled or disabled on-the-fly without having to deploy new code.
+              This can be useful for responding to unforeseen issues or changing
+              user requirements. For example, a developer could disable a
+              feature if they discover a bug, or they could enable a new feature
+              for a specific customer segment.
+            </li>
+            <li>
+              Customizing the user experience: Feature flags can be used to
+              customize the user experience based on user segments or
+              configuration settings. For example, a developer could use feature
+              flags to show different content to different users based on their
+              location or their subscription type.
+            </li>
+          </ul>
           <p className="mb-2">
-            Praesent arcu elit, volutpat et mauris quis, volutpat vestibulum
-            felis. Nam semper et massa in lobortis. Suspendisse facilisis
-            bibendum dolor, a aliquet lorem tincidunt vel. Proin eget posuere
-            justo. Aenean egestas magna a magna faucibus, sit amet eleifend
-            augue elementum. Curabitur rutrum ornare luctus. Duis vitae commodo
-            velit, non porttitor ligula. Donec ac ipsum eget metus posuere porta
-            id vel metus. Duis finibus lobortis lectus vitae convallis. Proin
-            aliquam faucibus mauris, nec aliquet tortor blandit sit amet.
-            Suspendisse eu arcu ac sapien malesuada vulputate. Donec ac justo at
-            lorem tincidunt pretium lacinia sit amet erat. Curabitur vitae lorem
-            nec orci bibendum varius at vel nulla. Donec sit amet scelerisque
-            elit.
-          </p>
-          <p className="mb-2">
-            Vestibulum metus ante, ornare sit amet felis ac, congue euismod
-            diam. Pellentesque pharetra augue tincidunt ante sagittis feugiat.
-            Vestibulum dignissim erat in libero hendrerit, faucibus imperdiet
-            nibh blandit. Etiam eu nisi eget mauris aliquam imperdiet. Aenean
-            pretium ante a risus aliquam viverra. Cras tempor blandit congue.
-            Suspendisse malesuada sem augue, quis accumsan odio egestas sed. Nam
-            viverra felis quis consectetur accumsan.
-          </p>
-          <h2 id="s2">Section 2</h2>
-          <p className="mb-2">
-            Vestibulum erat diam, volutpat sed enim nec, scelerisque sagittis
-            ligula. Praesent fringilla molestie placerat. Aliquam eu metus ante.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-            per inceptos himenaeos. Orci varius natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Donec efficitur dui
-            lorem, at venenatis orci interdum eu. Fusce diam lectus, molestie ut
-            tellus sit amet, lacinia scelerisque erat.
-          </p>
-          <p className="mb-2">
-            Donec pellentesque ligula augue, rutrum pharetra urna aliquet eget.
-            Cras vestibulum sapien metus, nec placerat ante tempus eget. Vivamus
-            et commodo quam, eget interdum elit. Phasellus sit amet ligula leo.
-            Fusce maximus nisl quis dui egestas dignissim. Aenean imperdiet
-            libero vitae congue bibendum. Duis suscipit hendrerit dolor, in
-            lobortis elit auctor a. Sed ipsum orci, mattis ut hendrerit at,
-            sagittis vitae leo. Vivamus tincidunt tempus dui in hendrerit.
-            Aliquam interdum massa lectus, vitae tempor turpis ullamcorper vel.
-            Aenean arcu turpis, efficitur ut sapien eget, accumsan pretium elit.
-          </p>
-          <p className="mb-2">
-            Quisque nunc massa, tempor sit amet nunc in, congue bibendum eros.
-            Morbi vel elit ac ex condimentum volutpat id sodales est. Aliquam
-            finibus faucibus ex in iaculis. Duis fringilla ligula eu urna
-            faucibus consectetur. Phasellus ante felis, tempus non feugiat
-            tempor, porttitor id arcu. Mauris vitae purus ac erat congue
-            porttitor ac efficitur lectus. Nam mattis nunc at viverra lobortis.
-            Maecenas in nulla ut nulla faucibus pretium. In vel neque at erat
-            finibus fermentum. Vestibulum semper magna neque, non viverra mauris
-            semper sit amet. Morbi aliquam felis non fringilla elementum. Nam
-            malesuada justo et sagittis suscipit. Morbi dapibus rhoncus lacinia.
-          </p>
-          <p className="mb-2">
-            Praesent varius, lectus in sagittis eleifend, purus magna commodo
-            lectus, a scelerisque ex nisi in quam. Pellentesque sit amet ligula
-            sit amet enim consectetur malesuada. Nam sem risus, dignissim
-            condimentum justo sed, tincidunt lobortis quam. Nam blandit dui non
-            hendrerit volutpat. Proin nec elit urna. Vivamus malesuada velit non
-            libero efficitur placerat. Praesent vel hendrerit ex. Aliquam erat
-            volutpat. Phasellus a egestas neque. Cras placerat facilisis
-            hendrerit. Suspendisse potenti. Pellentesque volutpat pretium urna
-            sed luctus. Nulla in eros ac turpis accumsan pulvinar nec volutpat
-            lectus. Aenean sem nulla, lacinia nec sem id, vestibulum fermentum
-            orci. Aliquam tempor nibh vel ligula suscipit dapibus id at ex.
-            Proin porta, neque sed aliquam consectetur, eros lectus dictum
-            magna, interdum finibus arcu elit id odio.
-          </p>
-          <h2 id="s3">Section 3</h2>
-          <p className="mb-2">
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-            per inceptos himenaeos. Quisque ut accumsan lorem. Sed tincidunt
-            nisi augue, non euismod ipsum luctus et. Maecenas nec nisi a leo
-            dictum fringilla. Integer egestas egestas efficitur. Nulla faucibus
-            rutrum mi vel feugiat. Quisque scelerisque fermentum felis, a cursus
-            sapien ultricies vitae. Fusce a varius ante. Suspendisse gravida
-            orci sollicitudin ultricies auctor. Donec rhoncus elementum
-            volutpat. Suspendisse vitae odio auctor, elementum tellus non,
-            vehicula libero.
+            Overall, feature flags are a powerful tool that can help software
+            development teams to deliver better features to their users more
+            quickly and safely.
           </p>
         </article>
         <aside
