@@ -3,8 +3,13 @@ import { createRoot } from "react-dom/client";
 import googleAnalytics from "@analytics/google-analytics";
 import { GrowthBook, GrowthBookProvider } from "@growthbook/growthbook-react";
 import { AnalyticsProvider } from "use-analytics";
+import * as Bowser from "bowser";
 
 import { App } from "./components/App";
+
+const browser = Bowser.getParser(window.navigator.userAgent);
+
+// console.log(`The current browser name is "${browser.getBrowserName()}"`);
 
 let analytics: AnalyticsInstance;
 
@@ -38,6 +43,7 @@ analytics.ready(() => {
   growthbook.setAttributes({
     ...growthbook.getAttributes(),
     id: analytics.user().anonymousId,
+    browser: browser.getBrowserName(),
   });
 });
 
