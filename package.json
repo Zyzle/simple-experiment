@@ -11,12 +11,14 @@
     "@growthbook/growthbook-react": "^0.11.1",
     "@headlessui/react": "^1.7.7",
     "analytics": "^0.8.1",
+    "bowser": "^2.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "use-analytics": "^0.0.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.8.10",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/use-analytics": "^0.0.0",
