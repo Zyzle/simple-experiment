@@ -10,7 +10,7 @@ let analytics: AnalyticsInstance;
 
 const growthbook = new GrowthBook({
   apiHost: "https://cdn.growthbook.io",
-  clientKey: "sdk-moFjHQypBadgSE5t",
+  clientKey: process.env.GROWTHBOOK_KEY,
   enableDevMode: true,
   trackingCallback: (experiment, result) => {
     analytics.track("$experiment_started", {

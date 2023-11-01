@@ -1,4 +1,8 @@
-import { useFeatureIsOn } from "@growthbook/growthbook-react";
+import {
+  useFeature,
+  useFeatureIsOn,
+  useFeatureValue,
+} from "@growthbook/growthbook-react";
 import { useAnalytics } from "use-analytics";
 
 import { SignupCta } from "../SignupCta";
@@ -7,14 +11,27 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+const PARTNER_LIST = {
+  base: " from-cyan-300 to-blue-600",
+  partner1: " from-yellow-300 to-yellow-600",
+  partner2: " from-pink-300 to-pink-600",
+  partner3: " from-green-300 to-green-600",
+};
+
 const App = () => {
   const { track, page } = useAnalytics();
   const sticky = useFeatureIsOn("sticky-subscribe-cta");
+  const partnerName = useFeatureValue("partner", "base");
   // page view
   page();
 
   return (
-    <main className="h-screen flex flex-col bg-gradient-to-b from-cyan-300 to-blue-600">
+    <main
+      className={classNames(
+        ["h-screen flex flex-col bg-gradient-to-b"],
+        PARTNER_LIST[partnerName]
+      )}
+    >
       <header className="w-full py-4 px-10 shadow-md bg-white z-10">
         <h1 className="prose prose-xl">An Awesome site</h1>
       </header>
