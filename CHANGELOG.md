@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Zyzle/simple-experiment/compare/v1.0.0...v1.1.0) (2023-11-01)
+
+
+### Features
+
+* move to GA4 and add ai content ([bb9c504](https://github.com/Zyzle/simple-experiment/commit/bb9c504d8444e5abca46234aa7159127b1b35034))
+
 ## 1.0.0 (2023-01-28)
 
 
